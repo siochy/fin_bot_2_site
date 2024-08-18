@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+	Design by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+    <title>{% block title %}{% endblock %}</title>
+    {% block script %}
+    {% endblock %}
+</head>
+<body class="is-preload">
+
+    <!-- Header -->
+    <div id="header">
+        <span class="logo icon fa-paper-plane"></span>
+        <h1><a href="https://t.me/fin_py_go_bot" target="_blank">FinBot</a> Graphics</h1>
+        {% block head %}
+        {% endblock %}
+    </div>
+
+    <!-- Main -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container medium">
+            <ul class="icons">
+                <li>
+                    <a href="https://t.me/sioh4" class="icon fa-paper-plane" target="_blank">
+                        <span class="label">Telegram</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/siochy" class="icon brands fa-github" target="_blank">
+                        <span class="label">Github</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="copyright">
+                <li>Design: <a href="http://html5up.net" target="_blank" >HTML5 UP</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

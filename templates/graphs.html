@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}{{ name }} Finbot Graphics{% endblock %}
+
+{% block head %}
+    {% if telegram %}
+        <p>
+            <a href="/logout">Logout</a>
+        </p>
+    {% else %}
+        <p>
+            Please <a href="/">log in</a>
+        </p>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% if telegram %}
+        <div id="main">
+        <div class="col-12">
+            <ul class="actions special">
+                <li>
+                    <a class="button" type='button' href="{{ url_for('refresh') }}">Refresh graphics</a>
+                </li>
+            </ul>
+        </div>
+            <div class="box alt container">
+                <section class="feature left">
+                    <img class="image" src="{{ url_for('static', filename=daily) }}"
+                         alt="" align="left" vspace=150 />
+                    <div class="content">
+                        <h3>Daily graphic</h3>
+                        <p>It shows how much money is spent per day for all observation period.</p>
+                    </div>
+                </section>
+                <section class="feature right">
+                    <img class="image" src="{{ url_for('static', filename=incsav) }}"
+                         alt="" align="right" vspace=150 />
+                    <div class="content">
+                        <h3>Income and Save</h3>
+                        <p>Ratio for Income and Save every month for all observation period.</p>
+                    </div>
+                </section>
+                <section class="feature left">
+                    <img class="image" src="{{ url_for('static', filename=top) }}"
+                         alt="" align="left" vspace=150 />
+                    <div class="content">
+                        <h3>Top Purchases</h3>
+                        <p>Top 20 of products by summary for all observation period.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
